@@ -1,17 +1,13 @@
 # Working with Brownie within FundMe contract
-
 ## Table of contents
-
 - [General info](#general-info)
 - [Learned experience during the project](#learned-experience-during-the-project)
 - [Setup](#setup)
 
 ### General info
-
 I wanted to work with Brownie, one of the most popular smart contract development platform built based on Python. Previously I worked with Web3.py, which gave me experience on all the aspects that brownie does under the hood.
 
 ### Learned experience during the project
-
 #### 1. Brownie vs Web3.py
 
 - In Web3.py we needed to write our own compile code. If we wanted to interact with one of the contracts that we deployed in the past, we'd have to keep track of all those addresses and manually update our address features.
@@ -20,9 +16,7 @@ I wanted to work with Brownie, one of the most popular smart contract developmen
   All in all it was crucial to work with Web3.py, to experience low-level stuff that Brownie does for us.
 
 #### 2. FundMe contract
-
 This contract was designed to be able to accept some type of payment -> specifically, payable with ETH.
-
 ### Setup
 
 There's three different ways of working with this project and each way require different approach with certain things like changing public/private keys.
@@ -33,17 +27,21 @@ There's three different ways of working with this project and each way require d
 
 Ganache and ganache-cli are quite similar. The difference is that in ganache-cli you're using command line instead of desktop app.
 
-#### Additional file for PRIVATE_KEY, WEB3_INFURA_PROJECT_ID and ETHERSCAN_TOKEN
-
-You must create file named **.env** in order to put there your exported private key (no matter, which way above you choose), but if you prefer working with TestNet I suggest to use [MetaMask](https://metamask.io/). It has to be in hexadecimal version, so we put **0x** at the beginning (only when you use TestNet, in ganache is right away, so check it carefully).
+#### Additional file for environment variables
+You must create file named **.env** in order to put there your environment variables (no matter, which way above you choose). 
+1. Also if you prefer working with TestNet I suggest to use [MetaMask](https://metamask.io/), after creating wallet, go straight to the account and export private key. It has to be in hexadecimal version, so we put **0x** at the beginning (only when you use TestNet, in ganache is right away, so check it carefully).
 
 ```
 export PRIVATE_KEY=0x...
 ```
-
-1. PRIVATE_KEY - just go to your MetaMask account and export private key
-2. WEB3_INFURA_PROJECT_ID - create project on infura.io
-3. ETHERSCAN_TOKEN - create app on etherscan.io
+2. Firstly you need an account on [Infura](https://infura.io/). After that you create new project and type it's ID.
+```
+export WEB3_INFURA_PROJECT_ID=...
+```
+3. Make an account on [Etherscan](https://etherscan.io/). Next go to **API Keys** and add new one.
+```
+export ETHERSCAN_TOKEN=...
+```
 
 #### Suggested commands to work with this project
 
