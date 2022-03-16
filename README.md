@@ -28,7 +28,7 @@ This contract was designed to be able to accept some type of payment -> specific
 There's three different ways of working with this project and each way require different approach with certain things like changing public/private keys.
 
 1. Using [Ganache](https://trufflesuite.com/ganache/index.html)
-2. Using [ganache-cli](https://trufflesuite.com/ganache/index.html)
+2. Using [ganache-cli](https://www.npmjs.com/package/ganache-cli)
 3. Using TestNet (e.g Rinkeby)
 
 Ganache and ganache-cli are quite similar. The difference is that in ganache-cli you're using command line instead of desktop app.
