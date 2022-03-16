@@ -11,16 +11,17 @@
 
 ### General info
 
-I wanted to work with Brownie, one of the most popular smart contract development platform built based on Python. Previously I worked with Web3.py, which gave me experience on all the aspects that brownie does under the hood.
+The project is about making first steps into Brownie, one of the most popular smart contract development platform build based on Python. It's my approach to understand basic aspects of it using FundMe contract as example. Previously I worked with Web3.py, which gave me experience on some of the aspects that brownie does under the hood.
 
 ### Learned experience during the project
 
 #### 1. Brownie vs Web3.py
 
-- In Web3.py we needed to write our own compile code. If we wanted to interact with one of the contracts that we deployed in the past, we'd have to keep track of all those addresses and manually update our address features.
-- Within Brownie we don't need to deploy a new contract every single time. We could work with a contract that we've already deployed. It's much easier to work with a whole bunch of different chains. We can quite easily work with Rinkeby TestNet and Mainnet (fork) on our own local network.
+- In Web3.py we needed to write our own code compiler. If we wanted to interact with one of the contracts that we deployed in the past, we'd have to keep track of all those addresses and manually update our address features.
+- Within Brownie we don't need to deploy a new contract every single time. We could work with a contract that we've already deployed. It's much easier to work with a whole bunch of different chains. We can quite easily work with Rinkeby TestNet or Mainnet (fork) on our own local network.
 - Brownie also makes great testing environment.
-  All in all it was crucial to work with Web3.py, to experience low-level stuff that Brownie does for us.
+
+All in all it was crucial to work with Web3.py, to experience low-level stuff that Brownie does for us.
 
 #### 2. FundMe contract
 
@@ -69,7 +70,7 @@ $ git clone https://github.com/pawlovskiii/brownie_fund_me
 # Go into the repository
 $ cd brownie_fund_me
 
-# Install brownie 
+# Install brownie
 
 # Install ganache-cli
 $ npm install -g ganache-cli
