@@ -5,6 +5,9 @@
 - [General info](#general-info)
 - [Learned experience during the project](#learned-experience-during-the-project)
 - [Setup](#setup)
+  - [Additional file for environment variables](#additional-file-for-environment-variables)
+  - [Installing dependencies](#installing-dependencies)
+  - [Available commands for the project](#available-commands-for-the-project)
 
 ### General info
 
@@ -55,7 +58,9 @@ export WEB3_INFURA_PROJECT_ID=...
 export ETHERSCAN_TOKEN=...
 ```
 
-#### Suggested commands to work with this project
+#### Installing dependencies
+
+#### Available commands for the project
 
 ```bash
 $ brownie run .\scripts\fund_and_withdraw.py --network ganache-local
