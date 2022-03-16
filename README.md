@@ -60,6 +60,24 @@ export ETHERSCAN_TOKEN=...
 
 #### Installing dependencies
 
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. In this case Node.js is only needed for installing prettier-plugin for Solidity. Furthermore you'll have to download [Python](https://www.python.org/downloads/) 3.6+ version in order to install all the required packages via pip. From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/pawlovskiii/brownie_fund_me
+
+# Go into the repository
+$ cd brownie_fund_me
+
+# Install brownie 
+
+# Install ganache-cli
+$ npm install -g ganache-cli
+
+# Install dependencies
+$ npm install
+```
+
 #### Available commands for the project
 
 ```bash
