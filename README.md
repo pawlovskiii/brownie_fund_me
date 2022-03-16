@@ -1,6 +1,11 @@
-# FundMe contract with Brownie 
-I wanted to work with Brownie, one of the most popular smart contract development platform built based on Python. Previously I worked with Web3.py, which gave me experience on all the aspects that brownie does under the hood.
+# Working with Brownie within FundMe contract
 
+## Table of contents
+* [General info](#general-info)
+* [Setup](#setup)
+
+### General info
+I wanted to work with Brownie, one of the most popular smart contract development platform built based on Python. Previously I worked with Web3.py, which gave me experience on all the aspects that brownie does under the hood.
 ## Brownie vs Web3.py
 - In Web3.py we needed to write our own compile code. If we wanted to interact with one of the contracts that we deployed in the past, we'd have to keep track of all those addresses and manually update our address features. 
 - Within Brownie we don't need to deploy a new contract every single time. We could work with a contract that we've already deployed. It's much easier to work with a whole bunch of different chains. We can quite easily work with Rinkeby TestNet and Mainnet (fork) on our own local network.
