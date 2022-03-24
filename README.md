@@ -66,7 +66,30 @@ function fund() public payable {
     }
 ```
 
-#### interfaces
+#### interface
+
+These contracts don't start with the _contract_ keyword, but with the **interface** keyword. They have some similarities, but the main difference is that their functions aren't completed.
+
+They just have the function name and its return type.
+
+```bash
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+interface AggregatorV3Interface {
+  function decimals() external view returns (uint8);
+  function description() external view returns (string memory);
+  function version() external view returns (uint256);
+  ...
+}
+```
+
+**interfaces** don't have full function implementations.
+
+**interfaces** compile down to an **ABI** - Application Binary Interface
+
+- The **ABI** tells Solidity and other programming languages how it can interact with another contract.
+- Anytime you want to interact with an already deployed smart contract you'll need an **ABI**.
 
 #### Getting external data with Chainlink
 
