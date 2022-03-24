@@ -27,6 +27,28 @@ All in all, it was crucial to work with Web3.py, to experience the low-level stu
 
 This contract was designed to be able to accept some type of payment -> specifically, payable with ETH.
 
+#### Keywords:
+
+- **msg.sender**
+
+- **payable**
+
+- **msg.value**
+
+- **constructor**
+
+- **modifier**
+
+#### interfaces
+
+#### Decimals in Solidity
+
+#### Getting external data with Chainlink
+
+- **oracles**
+
+#### Math in Solidity
+
 ## Setup
 
 There are three different ways of working with this project and each way requires a different approach with certain things like changing public/private keys.
