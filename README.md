@@ -72,7 +72,13 @@ function fund() public payable {
 
 #### Getting external data with Chainlink
 
-- **oracles**
+Chainlink uses _oracles_, which deliver data to the _Layer 1_ blockchain. They're distributed in a decentralized way, where we get data from different sources.
+
+In the case of the price we measure it like:
+
+- The sum of the price from different channels divide by the number of
+
+We have to work on _TestNet_ with Chainlink because there are no chainlink nodes on simulated JavaScript VMs (like in Remix IDE).
 
 #### Math in Solidity
 
