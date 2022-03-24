@@ -105,7 +105,26 @@ We have to work on _TestNet_ with Chainlink because there are no chainlink nodes
 
 - Decimals don't work in Solidity, so we have to return a value that's multiplied by 10 to some number.
 
-#### Math in Solidity
+#### Integer Overflow
+
+Integers can wrap around once you reach their maximum capacity. They reset. This is something we need to watch out for when working with Solidity.
+
+We must especially be careful when doing multiplication or really big numbers (we can accidentally pass this cap).
+
+```bash
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.6 <0.9.0;
+
+contract Overflow {
+
+    function overflow() public view returns(uint8) {
+        uint8 big = 255 + uint8(50);
+        return big; // 49
+    }
+}
+```
+
+As a version _0.8_ of Solidity, it checks for overflow and it defaults to check for overflow to increase the readability of code even if that comes a slight increase of the gas cost.
 
 ## Setup
 
