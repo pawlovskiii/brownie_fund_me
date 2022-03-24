@@ -45,6 +45,27 @@ This contract was designed to be able to accept some type of payment -> specific
   }
   ```
 
+- **require()**
+
+  When a _function call_ (i.e. _transaction_) reaches a **require** statement, it'll check the truthiness of whatever requires you've asked.
+
+  The line with the **require** statement says that if they didn't send us enough ether, then we're going to stop executing. We're going to do what's called a **revert** (simply **revert** the _transaction_). We can also add a **revert error message**.
+
+  This means that the user is going to get their money back as well as any unspent gas.
+
+  ```bash
+  mapping(address => uint256) public addressToAmountFunded;
+
+  function fund() public payable {
+          // 50$
+          uint256 minimumUSD = 50 * 10 ** 18;
+          require(getConversionRate(msg.value) >= minimumUSD, "You need to spend more ETH!");
+
+          addressToAmountFunded[msg.sender] += msg.value;
+          // what the ETH -> USD conversion rate
+  }
+  ```
+
 - **constructor**
 
 - **modifier**
