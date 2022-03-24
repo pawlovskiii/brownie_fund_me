@@ -29,8 +29,6 @@ This contract was designed to be able to accept some type of payment -> specific
 
 #### Keywords:
 
-- **msg.sender**
-
 - **payable**
 
   When we define function as **payable**, we're saying this function can be used to pay for things. In this case, returning all the money on the contract to its creator.
@@ -47,11 +45,26 @@ This contract was designed to be able to accept some type of payment -> specific
   }
   ```
 
-- **msg.value**
-
 - **constructor**
 
 - **modifier**
+
+#### msg.sender | msg.value
+
+These are keywords in every _contract call_ and every _transaction_.
+
+- **msg.sender** is the sender of the _function call_ i.e. _transaction_
+
+- **msg.value** is how much they sent
+
+So whenever we call _fund()_, somebody can send some value, because it's **payable** and we're going to save everything in this _addressToAmountFunded_ mapping.
+
+```bash
+mapping(address => uint256) public addressToAmountFunded;
+function fund() public payable {
+        addressToAmountFunded[msg.sender] += msg.value;
+    }
+```
 
 #### interfaces
 
