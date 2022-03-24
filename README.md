@@ -33,6 +33,20 @@ This contract was designed to be able to accept some type of payment -> specific
 
 - **payable**
 
+  When we define function as **payable**, we're saying this function can be used to pay for things. In this case, returning all the money on the contract to its creator.
+
+  ```bash
+  function withdraw() public payable onlyOwner {
+  	// only want the contract admin/owner
+  	msg.sender.transfer(address(this).balance);
+  	for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
+  		address funder = funders[funderIndex];
+  		addressToAmountFunded[funder] = 0;
+  	}
+  	funders = new address[](0);
+  }
+  ```
+
 - **msg.value**
 
 - **constructor**
