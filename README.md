@@ -88,6 +88,24 @@ function withdraw() payable public {
 
 - **modifier**
 
+We can use a **modifier** to write in the definition of our function. Add some parameter that allows it to only be called by our admin contract creator.
+
+A **modifier** is used to change the behavior of a function in a declarative way.
+
+**modifier** is going to be executed before we run **withdraw()** function.
+
+```js
+modifier onlyOwner {
+        require(msg.sender == owner, "You are not the owner of the contract!");
+        _;
+}
+
+function withdraw() payable onlyOwner public {
+        // only want the contract admin/owner 
+        msg.sender.transfer(address(this).balance);
+}
+```
+
 #### msg.sender | msg.value
 
 These are keywords in every _contract call_ and every _transaction_.
