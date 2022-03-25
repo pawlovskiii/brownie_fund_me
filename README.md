@@ -68,6 +68,24 @@ This contract was designed to be able to accept some type of payment -> specific
 
 - **constructor**
 
+At the top of our smart contract we're typically gonna see a **constructor** and this is a function that gets called the instant that our contract gets deployed.
+
+Whatever we add in here will be immediately executed whenever we deploy this contract.
+
+```js
+address public owner;
+
+constructor() public {
+        owner = msg.sender; // person who deploys the contract
+}
+
+function withdraw() payable public {
+        // only want the contract admin/owner
+        require(msg.sender == owner);
+        msg.sender.transfer(address(this).balance);
+}
+```
+
 - **modifier**
 
 #### msg.sender | msg.value
