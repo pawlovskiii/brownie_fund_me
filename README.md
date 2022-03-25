@@ -87,6 +87,28 @@ function fund() public payable {
     }
 ```
 
+#### Withdraw money from the contract
+
+Discussed keywords:
+
+- transfer()
+- this
+- balance
+
+Is a function that we can call on any address to send eth from one address to another. This **transfer()** function sends some amount of ether to whoever it's being called on.
+
+In this case, we're transferring ether to _msg.sender_, so all we need to do is define how much we want to send. We're going to send all the money that's been funded.
+
+Whenever you refer to **this**, you're talking about the contract that you're currently in. When we add **address(this)**, we're saying we want the address of the contract that we're currently in.
+
+Whenever you call an address and then the **.balance** attribute, you can see the balance in the ether of a contract so with that line, we're saying whoever called the **withdraw** function because whoever calls the function is going to be **msg.sender** (will get transfer all of our money from the contract).
+
+```bash
+function withdraw() payable public {
+        msg.sender.transfer(address(this).balance);
+}
+```
+
 #### interface
 
 These contracts don't start with the _contract_ keyword, but with the **interface** keyword. They have some similarities, but the main difference is that their functions aren't completed.
