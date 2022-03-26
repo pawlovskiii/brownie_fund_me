@@ -33,7 +33,7 @@ This contract was designed to be able to accept some type of payment -> specific
 
   When we define function as **payable**, we're saying this function can be used to pay for things. In this case, returning all the money on the contract to its creator.
 
-  ```bash
+  ```js
   function withdraw() public payable onlyOwner {
   	// only want the contract admin/owner
   	msg.sender.transfer(address(this).balance);
@@ -53,7 +53,7 @@ This contract was designed to be able to accept some type of payment -> specific
 
   This means that the user is going to get their money back as well as any unspent gas.
 
-  ```bash
+  ```js
   mapping(address => uint256) public addressToAmountFunded;
 
   function fund() public payable {
@@ -116,7 +116,7 @@ These are keywords in every _contract call_ and every _transaction_.
 
 So whenever we call _fund()_, somebody can send some value, because it's **payable** and we're going to save everything in this _addressToAmountFunded_ mapping.
 
-```bash
+```js
 mapping(address => uint256) public addressToAmountFunded;
 function fund() public payable {
         addressToAmountFunded[msg.sender] += msg.value;
@@ -139,7 +139,7 @@ Whenever you refer to **this**, you're talking about the contract that you're cu
 
 Whenever you call an address and then the **.balance** attribute, you can see the balance in the ether of a contract so with that line, we're saying whoever called the **withdraw** function because whoever calls the function is going to be **msg.sender** (will get transfer all of our money from the contract).
 
-```bash
+```js
 function withdraw() payable public {
         msg.sender.transfer(address(this).balance);
 }
@@ -190,7 +190,7 @@ Integers can wrap around once you reach their maximum capacity. They reset. This
 
 We must especially be careful when doing multiplication or really big numbers (we can accidentally pass this cap).
 
-```bash
+```js
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.6.6 <0.9.0;
 
