@@ -4,6 +4,15 @@
 
 - [General info](#general-info)
 - [Learned experience during the project](#learned-experience-during-the-project)
+  - [Brownie vs Web3](#brownie-vs-web3)
+  - [FundMe contract](#fundme-contract)
+    - [Keywords](#keywords)
+    - [msg.sender | msg.value](#msgsender--msgvalue)
+    - [Withdraw money from the contract](#withdraw-money-from-the-contract)
+    - [interface](#interface)
+    - [Getting external data with Chainlink](#getting-external-data-with-chainlink)
+    - [Decimals in Solidity](#decimals-in-solidity)
+    - [Integer Overflow](#integer-overflow)
 - [Setup](#setup)
   - [Additional file for environment variables](#additional-file-for-environment-variables)
   - [Installing dependencies](#installing-dependencies)
@@ -15,7 +24,7 @@ The project is about making the first steps into Brownie, one of the most popula
 
 ## Learned experience during the project
 
-### Brownie vs Web3.py
+### Brownie vs Web3
 
 - In Web3.py we needed to write our code compiler. If we wanted to interact with one of the contracts that we deployed in the past, we'd have to keep track of all those addresses and manually update our address features.
 - Within Brownie, we don't need to deploy a new contract every single time. We could work with a contract that we've already deployed. It's much easier to work with a whole bunch of different chains. We can quite easily work with Rinkeby TestNet or Mainnet (fork) on our local network.
@@ -101,7 +110,7 @@ modifier onlyOwner {
 }
 
 function withdraw() payable onlyOwner public {
-        // only want the contract admin/owner 
+        // only want the contract admin/owner
         msg.sender.transfer(address(this).balance);
 }
 ```
