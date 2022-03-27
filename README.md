@@ -13,7 +13,7 @@
     - [interface](#interface)
     - [Getting external data with Chainlink](#getting-external-data-with-chainlink)
     - [Decimals in Solidity](#decimals-in-solidity)
-    - [Integer Overflow](#integer-overflow)
+    - [Integer Overflow - SafeMath](#integer-overflow---safemath)
 - [Setup](#setup)
   - [Additional file for environment variables](#additional-file-for-environment-variables)
   - [Installing dependencies](#installing-dependencies)
@@ -221,11 +221,11 @@ We have to work on _TestNet_ with Chainlink because there are no chainlink nodes
 
 - Decimals don't work in Solidity, so we have to return a value that's multiplied by 10 to some number.
 
-#### Integer Overflow
+#### Integer Overflow - SafeMath
 
 Integers can wrap around once you reach their maximum capacity. They reset. This is something we need to watch out for when working with Solidity.
 
-We must especially be careful when doing multiplication or really big numbers (we can accidentally pass this cap).
+We must especially be careful when doing multiplication on really big numbers (we can accidentally pass this cap).
 
 ```js
 // SPDX-License-Identifier: MIT
@@ -240,7 +240,23 @@ contract Overflow {
 }
 ```
 
-As a version _0.8_ of Solidity, it checks for overflow and it defaults to check for overflow to increase the readability of code even if that comes a slight increase of the gas cost.
+As a version **0.8** of Solidity, it checks for overflow and it defaults to check for overflow to increase the readability of code even if that comes a slight increase of the gas cost.
+
+If you're using anything less than **0.8** you're going to want to use some type of **SafeMath**, just to check for your **overflows**. It'll use **SafeMathChainlink** for all of our **uint256**. It doesn't allow for that **overflow** to occur.
+
+```java
+// SPDX-License-Identifier: MIT
+pragma solidity >=0.6.6 <0.9.0;
+
+import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol";
+import "@chainlink/contracts/src/v0.6/vendor/SafeMathChainlink.sol";
+
+contract FundMe {
+    using SafeMathChainlink for uint256;
+
+    ...
+}
+```
 
 ## Setup
 
