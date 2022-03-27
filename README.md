@@ -9,6 +9,7 @@
     - [Keywords](#keywords)
     - [msg.sender | msg.value](#msgsender--msgvalue)
     - [Withdraw money from the contract](#withdraw-money-from-the-contract)
+    - [Withdraw money from the contract as an admin](#withdraw-money-from-the-contract-as-an-admin)
     - [interface](#interface)
     - [Getting external data with Chainlink](#getting-external-data-with-chainlink)
     - [Decimals in Solidity](#decimals-in-solidity)
