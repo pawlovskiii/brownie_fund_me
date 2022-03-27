@@ -100,9 +100,9 @@ This contract was designed to be able to accept some type of payment -> specific
 
 - **modifier**
 
-  We can use a **modifier** to write in the definition of our function. Add some parameter that allows it to only be called by our admin contract creator.
+  We can use a **modifier** to write in the additional definition for our function. A **modifier** is used to change the behavior of a function in a declarative way.
 
-  A **modifier** is used to change the behavior of a function in a declarative way.
+  Add some parameter that allows it to only be called by our admin contract creator (do **require** statement first). Then whenever **underscore** is in the **modifier**, run the rest of the code from certain function (in this case **withdraw()**).
 
   **modifier** is going to be executed before we run **withdraw()** function.
 
