@@ -78,43 +78,45 @@ This contract was designed to be able to accept some type of payment -> specific
 
 - **constructor**
 
-At the top of our smart contract we're typically gonna see a **constructor** and this is a function that gets called the instant that our contract gets deployed.
+  At the top of our smart contract we're typically gonna see a **constructor** and this is a function that gets called the instant that our contract gets deployed.
 
-Whatever we add in here will be immediately executed whenever we deploy this contract.
+  Whatever we add in here will be immediately executed whenever we deploy this contract.
 
-```js
-address public owner;
+  We could have a function, but what happens if somebody calls this function right after we deploy it? Well, then we wouldn't be the owner anymore.
 
-constructor() public {
-        owner = msg.sender; // person who deploys the contract
-}
+  ```js
+  address public owner;
 
-function withdraw() payable public {
-        // only want the contract admin/owner
-        require(msg.sender == owner);
-        msg.sender.transfer(address(this).balance);
-}
-```
+  constructor() public {
+          owner = msg.sender; // person who deploys the contract
+  }
+
+  function withdraw() payable public {
+          // only want the contract admin/owner
+          require(msg.sender == owner);
+          msg.sender.transfer(address(this).balance);
+  }
+  ```
 
 - **modifier**
 
-We can use a **modifier** to write in the definition of our function. Add some parameter that allows it to only be called by our admin contract creator.
+  We can use a **modifier** to write in the definition of our function. Add some parameter that allows it to only be called by our admin contract creator.
 
-A **modifier** is used to change the behavior of a function in a declarative way.
+  A **modifier** is used to change the behavior of a function in a declarative way.
 
-**modifier** is going to be executed before we run **withdraw()** function.
+  **modifier** is going to be executed before we run **withdraw()** function.
 
-```js
-modifier onlyOwner {
-        require(msg.sender == owner, "You are not the owner of the contract!");
-        _;
-}
+  ```js
+  modifier onlyOwner {
+          require(msg.sender == owner, "You are not the owner of the contract!");
+          _;
+  }
 
-function withdraw() payable onlyOwner public {
-        // only want the contract admin/owner
-        msg.sender.transfer(address(this).balance);
-}
-```
+  function withdraw() payable onlyOwner public {
+          // only want the contract admin/owner
+          msg.sender.transfer(address(this).balance);
+  }
+  ```
 
 #### msg.sender | msg.value
 
