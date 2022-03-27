@@ -154,6 +154,33 @@ function withdraw() payable public {
 }
 ```
 
+#### Withdraw money from the contract as an admin
+
+We want to set it up in a way that only the contract owner (creator) can withdraw funds. With help of the **require()** keyword, which can stop contracts from executing unless certain parameters are met.
+
+The only thing we're missing is when we withdraw from this contract. We're not updating our balances of people who funded this. So even after we withdraw, this is always going to be the same. So we have to go through all the **funders** and reset their balances to zero.
+
+```js
+mapping(address => uint256) public addressToAmountFunded;
+address[] public funders;
+address public owner;
+
+modifier onlyOwner {
+        require(msg.sender == owner, "You are not the owner of the contract!");
+        _;
+}
+
+function withdraw() payable onlyOwner public {
+        // only want the contract admin/owner
+        msg.sender.transfer(address(this).balance);
+        for (uint256 funderIndex=0; funderIndex < funders.length; funderIndex++) {
+            address funder = funders[funderIndex];
+            addressToAmountFunded[funder] = 0;
+        }
+        funders = new address[](0);
+}
+```
+
 #### interface
 
 These contracts don't start with the _contract_ keyword, but with the **interface** keyword. They have some similarities, but the main difference is that their functions aren't completed.
