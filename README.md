@@ -303,13 +303,19 @@ $ git clone https://github.com/pawlovskiii/brownie_fund_me
 # Go into the repository
 $ cd brownie_fund_me
 
-# Install brownie
-
 # Install ganache-cli
 $ npm install -g ganache-cli
 
 # Install dependencies
 $ npm install
+```
+
+Brownie installation might give you a little headache but I will give you a whole recipe to go through this process stressless. I found this [thread](https://stackoverflow.com/questions/69679343/pipx-failed-to-build-packages) very helpful. 
+
+```bash
+$ pip install cython
+
+$ pip install eth-brownie
 ```
 
 ### Available commands for the project
