@@ -20,7 +20,7 @@
 
 ## General info
 
-The project is about making the first steps into Brownie, one of the most popular smart contract development platforms build based on Python. It's my approach to understand basic aspects of it using the FundMe contract as an example. Previously I worked with Web3.py, which gave me experience on some of the aspects that brownie does under the hood.
+This project is about continuing the journey in the brownie ecosystem. I mainly focused on a new FundMe contract to further improve my Solidity skills. I also worked with Rinkeby Etherscan to verify contracts, did mocks and mainnet-forks.
 
 ## Learned experience during the project
 
