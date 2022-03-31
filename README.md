@@ -4,7 +4,6 @@
 
 - [General info](#general-info)
 - [Learned experience during the project](#learned-experience-during-the-project)
-  - [Brownie vs Web3](#brownie-vs-web3)
   - [FundMe contract](#fundme-contract)
     - [Keywords](#keywords)
     - [msg.sender | msg.value](#msgsender--msgvalue)
@@ -24,14 +23,6 @@
 The project is about making the first steps into Brownie, one of the most popular smart contract development platforms build based on Python. It's my approach to understand basic aspects of it using the FundMe contract as an example. Previously I worked with Web3.py, which gave me experience on some of the aspects that brownie does under the hood.
 
 ## Learned experience during the project
-
-### Brownie vs Web3
-
-- In Web3.py we needed to write our code compiler. If we wanted to interact with one of the contracts that we deployed in the past, we'd have to keep track of all those addresses and manually update our address features.
-- Within Brownie, we don't need to deploy a new contract every single time. We could work with a contract that we've already deployed. It's much easier to work with a whole bunch of different chains. We can quite easily work with Rinkeby TestNet or Mainnet (fork) on our local network.
-- Brownie also makes a great testing environment.
-
-All in all, it was crucial to work with Web3.py, to experience the low-level stuff that Brownie does for us.
 
 ### FundMe contract
 
@@ -310,7 +301,7 @@ $ npm install -g ganache-cli
 $ npm install
 ```
 
-Brownie installation might give you a little headache but I will give you a whole recipe to go through this process stressless. I found this [thread](https://stackoverflow.com/questions/69679343/pipx-failed-to-build-packages) very helpful. 
+Brownie installation might give you a little headache but I will give you a whole recipe to go through this process stressless. I found this [thread](https://stackoverflow.com/questions/69679343/pipx-failed-to-build-packages) very helpful.
 
 ```bash
 $ pip install cython
