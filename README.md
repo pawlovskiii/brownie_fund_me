@@ -309,6 +309,35 @@ $ pip install cython
 $ pip install eth-brownie
 ```
 
+Next, we need to focus on configuration for imports from **chainlink** Github. Unfortunately, brownie cannot read these imports as easily as remix IDE, so we need to create a separate file with additional settings. We're talking about the code below.
+
+```js
+import '@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol';
+import '@chainlink/contracts/src/v0.6/vendor/SafeMathChainlink.sol';
+```
+
+1. Firstly open settings via **Ctrl + Shift + P**, next type **open settings** and open it. After that paste the below phrase to the **settings.json**
+
+```json
+"solidity.remappings": [
+	"@chainlink/=/Users/mlody/.brownie/packages/smartcontractkit/chainlink-brownie-contracts@0.2.2",
+	"@openzeppelin/=/Users/mlody/.brownie/packages/OpenZeppelin/openzeppelin-contracts@4.4.0"
+]
+```
+
+2. Secondly, install the below packages.
+
+```bash
+$ brownie pm install smartcontractkit/chainlink-brownie-contracts@0.2.2
+$ brownie pm install OpenZeppelin/openzeppelin-contracts@4.4.0
+```
+
+3. In the end, you can check if all the packages are installed properly.
+
+```bash
+$ brownie pm list
+```
+
 ### Available commands for the project
 
 ```bash
