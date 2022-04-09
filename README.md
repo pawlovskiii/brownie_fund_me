@@ -251,6 +251,16 @@ contract FundMe {
 }
 ```
 
+### Etherscan
+
+### Verifying contracts on Rinkeby etherscan
+
+#### Flattening
+
+Imports with **'@'** don't work in Etherscan. So we would have to copy and paste the code from these imports to the top of our contract.
+
+Replacing imports with the actual code is known as **flattening**. This is an important concept for verifying our smart contracts on platforms like **etherscan**. However \*\*brownie has a nice way to get around this.
+
 ## Setup
 
 There are three different ways of working with this project and each way requires a different approach with certain things like changing public/private keys.
