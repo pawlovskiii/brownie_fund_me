@@ -262,7 +262,12 @@ contract FundMe {
 
 Imports with **'@'** don't work in Etherscan. So we would have to copy and paste the code from these imports to the top of our contract.
 
-Replacing imports with the actual code is known as **flattening**. This is an important concept for verifying our smart contracts on platforms like **etherscan**. However \*\*brownie has a nice way to get around this.
+```js
+import '@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol';
+import '@chainlink/contracts/src/v0.6/vendor/SafeMathChainlink.sol';
+```
+
+Replacing imports with the actual code is known as **flattening**. This is an important concept for verifying our smart contracts on platforms like **etherscan**. However **brownie** has a nice way to get around this.
 
 ## Setup
 
