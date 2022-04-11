@@ -269,6 +269,10 @@ import '@chainlink/contracts/src/v0.6/vendor/SafeMathChainlink.sol';
 
 Replacing imports with the actual code is known as **flattening**. This is an important concept for verifying our smart contracts on platforms like **etherscan**. However **brownie** has a nice way to get around this.
 
+### Mocks
+
+Deploying **mocks** is a common design pattern used across all software engineering industries and what it applies to do is deploying a fake version of something and interacting with it as if it's real.
+
 ## Setup
 
 There are three different ways of working with this project and each way requires a different approach with certain things like changing public/private keys.
