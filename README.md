@@ -274,6 +274,16 @@ Replacing imports with the actual code is known as **flattening**. This is an im
 
 Deploying **mocks** is a common design pattern used across all software engineering industries and what it applies to do is deploying a fake version of something and interacting with it as if it's real.
 
+### mainnet-fork via brownie
+
+It's incredibly powerful when we're working with smart contracts on mainnet, that we want to test locally.
+
+A forked blockchain takes a copy of an existing blockchain and brings it into our local computer for us to work with. Within this copy, we have control of this blockchain since it's going to run on our local computer.
+
+All the interactions that we do on this local blockchain are not going to affect the real one, because it's our local chain. We can interact with all these different contracts that are already going to be on-chain.
+
+**mainnet-fork** is a built-in part of brownie, we can get it the same way as **rinkeby**
+
 ## Setup
 
 There are three different ways of working with this project and each way requires a different approach with certain things like changing public/private keys.
