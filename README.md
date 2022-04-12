@@ -285,6 +285,17 @@ All the interactions that we do on this local blockchain are not going to affect
 
 **mainnet-fork** is a built-in part of brownie, we can get it the same way as **rinkeby**
 
+### Code testing principles
+
+Oftentimes we don't want to test all of our functionality on rinkeby and live networks, because it's going to take a long time for them to run. So sometimes we only want to run tests on our local chains.
+
+Where should I run my tests?
+
+1. Brownie Ganache Chain with Mocks: **Always**
+2. Testnet: **Always (but only for integration testing)**
+3. Brownie mainnet-fork: **Optional**
+4. Custom mainnet-fork: **Optional**
+
 ## Setup
 
 There are three different ways of working with this project and each way requires a different approach with certain things like changing public/private keys.
