@@ -259,7 +259,19 @@ contract FundMe {
 
 ### Etherscan
 
+Etherscan is a blockchain explorer for the Ethereum network. The website allows you to search through transactions, blocks, wallets, addresses, smart contracts, and other on-chain data.
+
 ### Verifying contracts on Rinkeby etherscan
+
+Brownie features automatic source code verification for solidity contracts on all networks supported by etherscan. To verify a contract while deploying it, add the **publish_source=True** argument. Also, follow the later instructions in the [setup](#setup) section.
+
+```python
+fund_me = FundMe.deploy(
+  price_feed_address, {"from": account}, publish_source=config["networks"][network.show_active()].get("verify")
+)
+```
+
+Moreover...
 
 #### Flattening
 
