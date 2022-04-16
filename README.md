@@ -263,15 +263,13 @@ Etherscan is a blockchain explorer for the Ethereum network. The website allows 
 
 ### Verifying contracts on Rinkeby etherscan
 
-Brownie features automatic source code verification for solidity contracts on all networks supported by etherscan. To verify a contract while deploying it, add the **publish_source=True** argument. Also, follow the later instructions in the [setup](#setup) section.
+Brownie features automatic source code verification for solidity contracts on all networks supported by etherscan. To verify a contract while deploying it, make sure the value of **publish_source** equals **True**. Also, follow the later instructions in the [setup](#setup) section.
 
 ```python
 fund_me = FundMe.deploy(
   price_feed_address, {"from": account}, publish_source=config["networks"][network.show_active()].get("verify")
 )
 ```
-
-Moreover...
 
 #### Flattening
 
@@ -283,6 +281,14 @@ import '@chainlink/contracts/src/v0.6/vendor/SafeMathChainlink.sol';
 ```
 
 Replacing imports with the actual code is known as **flattening**. This is an important concept for verifying our smart contracts on platforms like **etherscan**. However **brownie** has a nice way to get around this.
+
+#### Additional pieces of information about the contract
+
+The very important feature is that you can explore deployed contracts on etherscan in many different ways. Below the **Contract Overview** section you'll find few sections like **Transactions**, **Contracts** or **Events**. Of course, they're some more, but now we're going to focus on **Contract** one. As an example with our deployed [FundMe contract](https://rinkeby.etherscan.io/address/0xad7c61c3f6d48d062b8c587767cb2d64905e1252#code).
+
+- This **Read Contract** section is for all these **view** functions, the ones that aren't going to be making a state change.
+
+- Section **Write Contract** on the other hand is going to be making a **state change** to the blockchain.
 
 ### Mocks
 
@@ -340,6 +346,8 @@ export WEB3_INFURA_PROJECT_ID=...
 ```
 export ETHERSCAN_TOKEN=...
 ```
+
+With API from etherscan, we were able to successfully deploy our contract with valid verification of our code. It automatically **flatten** code from chainlink repositories.
 
 ### Installing dependencies
 
