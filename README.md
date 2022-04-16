@@ -16,6 +16,7 @@
   - [Etherscan](#etherscan)
   - [Verifying contracts on Rinkeby etherscan](#verifying-contracts-on-rinkeby-etherscan)
     - [Flattening](#flattening)
+    - [Additional pieces of information about the contract](#additional-pieces-of-information-about-the-contract)
   - [Mocks](#mocks)
   - [mainnet-fork via brownie](#mainnet-fork-via-brownie)
   - [Code testing principles](#code-testing-principles)
