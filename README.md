@@ -23,7 +23,10 @@
 - [Setup](#setup)
   - [Additional file for environment variables](#additional-file-for-environment-variables)
   - [Installing dependencies](#installing-dependencies)
-  - [Available commands for the project](#available-commands-for-the-project)
+  - [Recommended commands to use for the project](#recommended-commands-to-use-for-the-project)
+    - [Deploying a contract via ganache-cli (default)](#deploying-a-contract-via-ganache-cli-default)
+    - [Deploying a contract via mainnet-fork](#deploying-a-contract-via-mainnet-fork)
+    - [Brownie testing variations command](#brownie-testing-variations-command)
 
 ## General info
 
