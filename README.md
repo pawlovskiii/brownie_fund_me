@@ -405,33 +405,36 @@ $ brownie pm install OpenZeppelin/openzeppelin-contracts@4.4.0
 $ brownie pm list
 ```
 
-### Available commands for the project
+### Recommended commands to use for the project
+
+The crucial step in order to do any action with the contracts.
 
 ```bash
-$ brownie run .\scripts\fund_and_withdraw.py --network ganache-local
+$ brownie compile
+```
 
+#### Deploying a contract via ganache-cli (default)
+
+```bash
+$ brownie run .\scripts\deploy.py
+```
+
+#### Deploying a contract via mainnet-fork
+
+```bash
 $ brownie run .\scripts\deploy.py --network mainnet-fork-dev
+```
 
-$ brownie test -k test_only_owner_can_withdraw --network rinkeby
+#### Brownie testing variations command
+
+```bash
+# to run the tests within default format
+$ brownie test
+
+# different variation network
+$ brownie test --network mainnet-fork-dev
 
 $ brownie test -k test_only_owner_can_withdraw --network development
 
-$ brownie test --network mainnet-fork-dev
-```
-
-### Other useful Brownie commands
-
-```bash
-# to create a sample folder with everything we need with Brownie
-$ brownie init
-
-$ brownie compile
-
-$ brownie networks list
-
-$ brownie console
-
-$ brownie test
-
-$ brownie pm list
+$ brownie test -k test_only_owner_can_withdraw --network rinkeby
 ```
