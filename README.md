@@ -402,7 +402,13 @@ $ brownie pm install smartcontractkit/chainlink-brownie-contracts@0.2.2
 $ brownie pm install OpenZeppelin/openzeppelin-contracts@4.4.0
 ```
 
-3. In the end, you can check if all the packages are installed properly.
+3. Moreover, add a development brownie network. Remember to put here your WEB3_INFURA_PROJECT_ID (replace it in the **fork** flag), which you should have previously created in the **.env** file.
+
+```bash
+$ brownie networks add development mainnet-fork-dev cmd=ganache-cli host=http://127.0.0.1 fork='https://infura.io/v3/$WEB3_INFURA_PROJECT_ID' accounts=10 mnemonic=brownie port=8545
+```
+
+4. In the end, you can check if all the packages are installed properly.
 
 ```bash
 $ brownie pm list
