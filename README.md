@@ -30,13 +30,13 @@
 
 ## General info
 
-This project is about continuing the journey in the brownie ecosystem. I mainly focused on a new FundMe contract to further improve my Solidity skills. I also worked with Rinkeby Etherscan to verify contracts, did mocks and mainnet-forks.
+This project is about continuing the journey in the brownie ecosystem. I mainly focused on a new FundMe contract to further improve my Solidity skills. I also worked with Rinkeby Etherscan to verify contracts and did mocks within mainnet-forks.
 
 ## Learned experience during the project
 
 ### FundMe contract
 
-This contract was designed to be able to accept some type of payment -> specifically, payable with ETH.
+This contract was designed to be able to accept some type of payment. Specifically, payable with ETH.
 
 #### Keywords:
 
@@ -428,18 +428,18 @@ $ brownie compile
 $ brownie run .\scripts\deploy.py
 ```
 
-#### Deploying a contract via mainnet-fork (mock)
-
-```bash
-$ brownie run .\scripts\deploy.py --network mainnet-fork-dev
-```
-
 #### Deploying a contract via Rinkeby Testnet
 
 It's the most time expensive, but it allows for verification of the contract by the etherscan.
 
 ```bash
 $ brownie run .\scripts\deploy.py --network rinkeby
+```
+
+#### Deploying a contract via mainnet-fork (mock)
+
+```bash
+$ brownie run .\scripts\deploy.py --network mainnet-fork-dev
 ```
 
 #### Brownie testing variations command
