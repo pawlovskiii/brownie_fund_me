@@ -428,10 +428,18 @@ $ brownie compile
 $ brownie run .\scripts\deploy.py
 ```
 
-#### Deploying a contract via mainnet-fork
+#### Deploying a contract via mainnet-fork (mock)
 
 ```bash
 $ brownie run .\scripts\deploy.py --network mainnet-fork-dev
+```
+
+#### Deploying a contract via Rinkeby Testnet
+
+It's the most time expensive, but it allows for verification of the contract by the etherscan.
+
+```bash
+$ brownie run .\scripts\deploy.py --network rinkeby
 ```
 
 #### Brownie testing variations command
