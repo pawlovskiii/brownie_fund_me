@@ -402,7 +402,7 @@ $ brownie pm install smartcontractkit/chainlink-brownie-contracts@0.2.2
 $ brownie pm install OpenZeppelin/openzeppelin-contracts@4.4.0
 ```
 
-3. Moreover, add a development brownie network.
+3. Moreover, add a development brownie network. Below I put my HTTP address, under the **fork** flag. If you prefer to create your app, go to [Alchemy](https://www.alchemy.com/) and set up an account. Next just create a new app within the Mainnet network and paste below the HTTP address.
 
 ```bash
 $ brownie networks add development mainnet-fork-dev cmd=ganache-cli host=http://127.0.0.1 fork='https://eth-mainnet.alchemyapi.io/v2/fNu4SKn94b29EhGI2nZdvfKzKl1CvqmK' accounts=10 mnemonic=brownie port=8545
